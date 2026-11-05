@@ -2,12 +2,12 @@ class Solution {
 public:
     bool isMiddleElementUnique(vector<int>& nums) {
         int n = nums.size();
-        unordered_map<int,int> mp;
+        int mid = nums[n/2];
+        int count =0;
         for(int x: nums){
-            mp[x]++;
+            if(x==mid){count++;}
+            if(count>1){return false;}
         }
-        int ele = nums[n/2];
-        if(mp[ele]==1){return true;}
-        return false;
+        return true;   
     }
 };
